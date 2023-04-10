@@ -44,7 +44,11 @@ public class WebSocketClientChannel implements WebSocketClientCom.OnTextMessage,
 
     private OnDisConnectedListener onDisConnectedListener;
     public void setOnDisConnectedListener(OnDisConnectedListener onDisConnectedListener) {
-        this.onDisConnectedListener = onDisConnectedListener;
+        try{
+            this.onDisConnectedListener = onDisConnectedListener;
+        }catch (NullPointerException e){
+
+        }
     }
 
     @Override
